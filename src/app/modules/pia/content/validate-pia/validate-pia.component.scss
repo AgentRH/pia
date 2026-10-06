@@ -71,8 +71,8 @@
           /* Special class added to checked radio buttons */
           &.validate {
             input:checked + label {
-              border: solid $pia-green 1px;
-              background-color: $pia-green;
+              border: solid $pia-valid 1px;
+              background-color: $pia-valid;
               color: #fff;
               font-weight: bold;
               .fa-circle {

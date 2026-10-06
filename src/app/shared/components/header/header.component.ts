@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { environment } from '../../../../environments/environment';
+import { instance } from '../../../../environments/instance';
 import { TranslateService } from '@ngx-translate/core';
 
 import { LanguagesService } from 'src/app/services/languages.service';
@@ -29,6 +30,9 @@ export class HeaderComponent implements OnInit {
   isStructureHeader: boolean;
   isArchiveHeader: boolean;
   userRole: boolean;
+  // AgentRH : contact de support de l'instance (menu Aide)
+  supportEmail: string = instance.supportEmail;
+  clientName: string = instance.clientName;
 
   protected readonly faEarthEurope = faEarthEurope;
 

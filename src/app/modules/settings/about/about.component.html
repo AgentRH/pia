@@ -5,13 +5,24 @@
     <div class="small-12 medium-6 medium-offset-3 columns">
       <h1>{{ 'about.title' | translate }}</h1>
       <div class="pia-aboutBlock-piaLogo">
+        <img src="assets/images/agentrh-logo.svg" alt="AgentRH" />
         <div class="pia-aboutBlock-piaLogo-text">
           {{ 'header.logo_title' | translate }}<br>
           <span>{{ 'header.logo_subtitle' | translate }}</span>
         </div>
         <div class="pia-aboutBlock-piaLogo-version">{{ 'about.version_number' | translate }} : {{ appVersion }}</div>
       </div>
-      <p class="pia-aboutBlock-cnilLogo" [innerHTML]="'about.description' | translate"></p>
+      <!-- AgentRH : mention de modification (GPLv3, art. 5) et accès au code source -->
+      <p class="pia-aboutBlock-notice" [innerHTML]="'about.agentrh_notice' | translate"></p>
+      @if (sourceUrl) {
+      <p class="pia-aboutBlock-notice">
+        {{ 'about.source_code' | translate }}
+        <a [href]="sourceUrl" target="_blank" rel="noopener">{{ sourceUrl }}</a>
+      </p>
+      }
+
+      <h2>{{ 'about.original_title' | translate }}</h2>
+      <p class="pia-aboutBlock-original" [innerHTML]="'about.description' | translate"></p>
       <p [innerHTML]="'about.translators' | translate"></p>
       <div [innerHTML]="'about.translators_name' | translate"></div>
       <p [innerHTML]="'about.contribute' | translate"></p>
@@ -34,6 +45,7 @@
         <li>Tinymce (GNU GPL Licence Version 2.1)</li>
         <li>D3 (BSD Licence Version 4.0)</li>
         <li>ng2-pdfjs-viewer (MIT Licence Version 4.1.2)</li>
+        <li>Inter (SIL OFL Licence Version 1.1)</li>
       </ul>
     </div>
   </div>

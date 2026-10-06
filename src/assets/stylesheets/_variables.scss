@@ -1,15 +1,41 @@
+// -----------------------------------------------------------------------------
+// AgentRH · Espace conformité
+// Fork du logiciel PIA de la CNIL (GPLv3). Toute la charte se règle ici.
+//
+// Les noms de variables d'origine sont conservés pour rester compatible avec
+// le code amont (LINCnil/pia) et faciliter la récupération des mises à jour :
+//   $pia-blue   = bleu nuit AgentRH (navigation, titres, bloc de connexion)
+//   $pia-green  = couleur d'ACTION AgentRH (boutons, liens, focus). Ce n'est
+//                 plus un vert : c'est le bleu roi éclairci, lisible sur fond
+//                 blanc comme sur fond nuit.
+//   $pia-valid  = vert SÉMANTIQUE (validé, acceptable, jauges de risque).
+//                 Identique au vert d'origine, comme dans les exports PDF.
+//   $pia-red    = rouge SÉMANTIQUE (à corriger, risque élevé, erreurs).
+// -----------------------------------------------------------------------------
+
+// Charte AgentRH
+$agentrh-night: #0B1538;
+$agentrh-royal: #2B4FE0;
+$agentrh-action: #4470FF;
+$agentrh-action-dark: #1B3BB5;
+$agentrh-paper: #F5F7FC;
+
 // General colors
-$pia-green: #3EE095;
+$pia-green: $agentrh-action;
 $pia-red: #FD4664;
-$pia-blue: #091C6B;
-$pia-white: #F5F5F5;
+$pia-blue: $agentrh-night;
+$pia-white: $agentrh-paper;
 $pia-gray: #A7A7A7;
 $pia-light-black: #393939;
 $pia-dark-black: #121921;
 
-$pia-green-dark: #127137;
+$pia-green-dark: $agentrh-action-dark;
 $pia-red-dark: #C40288;
 $pia-gray-dark: #686868;
+
+// Couleurs sémantiques (statuts d'évaluation, jauges, validation)
+$pia-valid: #3EE095;
+$pia-valid-dark: #127137;
 
 // Settings Foundation
 $global-flexbox: true;

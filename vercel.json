@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "ELECTRON_SKIP_BINARY_DOWNLOAD=1 CYPRESS_INSTALL_BINARY=0 HUSKY=0 yarn install --immutable",
+  "buildCommand": "node scripts/write-instance-config.js && yarn ng build --configuration production",
+  "outputDirectory": "dist/pia-angular/browser",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/(index.html|ngsw.json|ngsw-worker.js)",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "name": "PIA",
-  "short_name": "PIA",
-  "theme_color": "#ffffff",
+  "name": "AgentRH · Espace conformité",
+  "short_name": "AgentRH",
+  "theme_color": "#0B1538",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",

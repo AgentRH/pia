@@ -87,7 +87,7 @@
     // TODO: Green only for success validation (.is-valid) and Red only for (.is-invalid)
     .msg {
       margin: 0;
-      color: $pia-green;
+      color: $pia-valid;
     }
     .is {
       &-invalid {
@@ -117,24 +117,24 @@
         }
       }
       &-valid {
-        color: $pia-green;
+        color: $pia-valid;
         label {
-          color: $pia-green;
+          color: $pia-valid;
         }
         input {
           &[type="text"],
           &[type="password"] {
-            border-bottom: 1px solid $pia-green;
+            border-bottom: 1px solid $pia-valid;
             &:focus {
-              border-bottom: 1px solid $pia-green;
+              border-bottom: 1px solid $pia-valid;
               & + label {
-                color: $pia-green;
+                color: $pia-valid;
               }
             }
           }
           &[type="checkbox"] {
-            border: 1px solid $pia-green;
-            color: $pia-green;
+            border: 1px solid $pia-valid;
+            color: $pia-valid;
           }
         }
       }

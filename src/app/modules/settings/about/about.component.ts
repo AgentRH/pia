@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { instance } from 'src/environments/instance';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class AboutComponent implements OnInit {
   appVersion: string;
+  // AgentRH : dépôt public du code source de cette version (mention GPLv3)
+  sourceUrl: string = instance.sourceUrl;
 
   constructor() {}
 

@@ -81,7 +81,7 @@ main.pia-contrast {
       p {
         color: $pia-green-dark !important;
         &.is-valid {
-          color: $pia-green-dark !important;
+          color: $pia-valid-dark !important;
         }
         &.is-invalid {
           color: $pia-red-dark !important;
@@ -873,7 +873,7 @@ main.pia-contrast {
         background-color: $pia-gray-dark !important;
       }
       .pia-green {
-        background-color: $pia-green-dark !important;
+        background-color: $pia-valid-dark !important;
       }
       .pia-blue {
         background-color: $pia-blue !important;

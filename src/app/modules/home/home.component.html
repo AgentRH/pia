@@ -2,10 +2,14 @@
   <div class="row">
     <div class="small-12 medium-8 columns pia-authenticationBlock-logo">
       <div>
-        <img src="assets/images/pia-auth-logo.png" alt="Logo PIA" />
+        <img src="assets/images/agentrh-logo.svg" alt="AgentRH" />
         <div>
           <h1 [innerHTML]="'authentication.title' | translate"></h1>
-          <div>{{ "header.logo_subtitle" | translate }}</div>
+          <div>
+            {{ "header.logo_subtitle" | translate }}@if (clientName) {
+            <span> · {{ clientName }}</span>
+            }
+          </div>
         </div>
       </div>
       <div>

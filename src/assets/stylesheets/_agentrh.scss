@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// AgentRH · surcouche de charte
+// Chargée en dernier depuis styles.scss. Les couleurs se règlent dans
+// _variables.scss ; ce fichier ne porte que la typographie et les fonds.
+// -----------------------------------------------------------------------------
+@use "variables" as *;
+
+// Inter (variable), embarquée dans l'application : aucun appel à un service tiers.
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("src/assets/fonts/inter-latin-ext-wght-normal.woff2")
+    format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("src/assets/fonts/inter-latin-wght-normal.woff2")
+    format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  // Roboto reste en repli pour les alphabets qu'Inter latin ne couvre pas.
+  font-family: "Inter", "Roboto", sans-serif;
+  font-feature-settings: "cv11", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Page de connexion : le symbole AgentRH en grand, coupé par le bord de
+// l'écran, sur un fond clair. Remplace l'image aux hexagones de l'outil CNIL.
+body.pia-authentication {
+  background-color: $agentrh-paper;
+  background-image: url("src/assets/images/agentrh-symbol-watermark.svg"),
+    radial-gradient(
+      ellipse 70% 60% at 0% 100%,
+      rgba($agentrh-royal, 0.16),
+      rgba($agentrh-royal, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 100% 0%,
+      rgba(#7a5cff, 0.1),
+      rgba(#7a5cff, 0) 70%
+    );
+  background-repeat: no-repeat;
+  background-position: left -6vw bottom -13vw, center, center;
+  background-size: 50vw auto, cover, cover;
+  background-attachment: fixed;
+}
+
+// Focus clavier visible partout, à la couleur d'action
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid $agentrh-action;
+  outline-offset: 2px;
+}

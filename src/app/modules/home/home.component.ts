@@ -1,3 +1,4 @@
+import { instance } from 'src/environments/instance';
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import {
   UntypedFormBuilder,
@@ -18,6 +19,8 @@ import { AuthService } from 'src/app/services/auth.service';
   standalone: false
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  // AgentRH : nom du client de l'instance
+  clientName: string = instance.clientName;
   signUp: UntypedFormGroup;
   logIn: UntypedFormGroup;
   fromValidation: boolean = false;

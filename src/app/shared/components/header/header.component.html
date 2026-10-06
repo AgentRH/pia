@@ -4,12 +4,13 @@
     <div class="row">
       <div class="small-12 medium-12 columns">
         <a routerLink="/entries"
-          ><img src="assets/images/pia-logo.jpg" alt="Logo PIA"
+          ><img src="assets/images/agentrh-logo.svg" alt="AgentRH"
         /></a>
         <div>
-          {{ "header.logo_title" | translate }}<br /><span>{{
-            "header.logo_subtitle" | translate
-          }}</span>
+          {{ "header.logo_title" | translate }}<br /><span
+            >{{ "header.logo_subtitle" | translate }}@if (clientName) { ·
+            {{ clientName }} }</span
+          >
         </div>
         <div class="hide-for-print pia-closeFullScreenModeAlertBlock">
           {{ "header.exit_full_screen_mode" | translate }}
@@ -178,14 +179,13 @@
                     </button>
                   </li>
                   }
+                  @if (supportEmail) {
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/LINCnil/pia/blob/master/CONTRIBUTING.md#exprimer-un-besoin-ou-probl%C3%A8me"
-                    >
+                    <a [href]="'mailto:' + supportEmail">
                       {{ "header.help.issue_reporting" | translate }}
                     </a>
                   </li>
+                  }
                 </ul>
               </li>
             </ng-container>

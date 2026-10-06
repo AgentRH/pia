@@ -1,4 +1,5 @@
 @use "./assets/stylesheets/variables" as *;
+@use "sass:meta";
 @use "normalize.css/normalize.css";
 // Foundation styles
 @use "foundation-sites/scss/foundation.scss" as foundation;
@@ -44,13 +45,7 @@ html,
 body {
   height: 100%;
 }
-body {
-  &.pia-authentication {
-    background: url("./assets/images/authentication-bg.png") no-repeat center
-      center transparent;
-    background-size: cover;
-  }
-}
+// AgentRH : le fond de la page de connexion est défini dans _agentrh.scss
 .row {
   max-width: inherit;
 }
@@ -273,3 +268,6 @@ tag-input-form {
     }
   }
 }
+
+// AgentRH : surcouche de charte, chargée en dernier pour primer sur le reste.
+@include meta.load-css("./assets/stylesheets/agentrh");

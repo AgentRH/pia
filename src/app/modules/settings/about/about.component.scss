@@ -5,12 +5,17 @@
     text-transform: uppercase;
     margin-bottom: 40px;
   }
+  h2 {
+    margin-top: 40px;
+  }
   &-piaLogo {
-    padding-left: 260px;
-    background: transparent url("src/assets/images/pia-auth-logo.png") no-repeat
-      center left;
-    height: 123px;
     margin-bottom: 40px;
+    img {
+      display: block;
+      height: 44px;
+      width: auto;
+      margin-bottom: 24px;
+    }
     &-text {
       text-align: left;
       display: inline-block;
@@ -29,11 +34,14 @@
       color: #000;
     }
   }
-  &-cnilLogo {
-    padding-left: 180px;
-    background: transparent url("src/assets/images/cnil-logo.png") no-repeat
-      center left;
-    background-size: 160px;
+  &-notice {
+    text-align: justify;
+  }
+  &-notice:first-of-type {
+    padding-left: 16px;
+    border-left: 3px solid $pia-green;
+  }
+  &-original {
     text-align: justify;
   }
 }

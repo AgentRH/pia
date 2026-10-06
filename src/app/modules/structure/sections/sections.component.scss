@@ -93,7 +93,7 @@
       }
       > div {
         .ng-fa-icon.pia-fa-valid {
-          color: $pia-green;
+          color: $pia-valid;
         }
         &:first-child {
           .pia-sectionBlock-title {
@@ -114,7 +114,7 @@
           .fa-pencil-square-o.pia-fa-valid,
           .pia-fa-valid > .fa-gear,
           .fa-check-square-o {
-            color: $pia-green;
+            color: $pia-valid;
           }
         }
         &:nth-child(2) {
