@@ -1015,7 +1015,7 @@ export class ExportComponent implements OnInit {
           dataNavItemId
         ]['questions']) {
           // Question title
-          doc.setTextColor('#091c6B');
+          doc.setTextColor('#0b1538');
           writeBoldText(
             purifyString(translateService.instant(question.title)),
             20,
@@ -1125,7 +1125,7 @@ export class ExportComponent implements OnInit {
         if (allData[3][1] && allData[3][1].length > 0) {
           for (const measure of allData[3][1]) {
             // Measure title
-            doc.setTextColor('#091c6B');
+            doc.setTextColor('#0b1538');
             if (measure.title) {
               writeBoldText(
                 purifyString(measure.title),
@@ -1384,7 +1384,7 @@ export class ExportComponent implements OnInit {
       // Generate the summary of the PIA
       function generateSummary(dataNav, translateService, languagesService) {
         // Section 1
-        doc.setFillColor('#3ee095');
+        doc.setFillColor('#4470ff');
         doc.rect(20, 20, 8, 30, 'F');
         doc.setDrawColor('#aaa');
         doc.rect(20, 20, pageWidth - 40, 30);
@@ -1417,7 +1417,7 @@ export class ExportComponent implements OnInit {
           languagesService
         );
         // Section 2
-        doc.setFillColor('#091c6b');
+        doc.setFillColor('#0b1538');
         doc.rect(20, 120, 8, 30, 'F');
         doc.setDrawColor('#aaa');
         doc.rect(20, 120, pageWidth - 40, 30);
@@ -1654,7 +1654,7 @@ export class ExportComponent implements OnInit {
       doc.addPage();
       pageSize = 40;
       generateHeader(
-        '#3ee095',
+        '#4470ff',
         this.dataNav,
         0,
         0,
@@ -1683,7 +1683,7 @@ export class ExportComponent implements OnInit {
       doc.addPage();
       pageSize = 40;
       generateHeader(
-        '#3ee095',
+        '#4470ff',
         this.dataNav,
         0,
         1,
@@ -1714,7 +1714,7 @@ export class ExportComponent implements OnInit {
       doc.addPage();
       pageSize = 40;
       generateHeader(
-        '#091c6b',
+        '#0b1538',
         this.dataNav,
         1,
         0,
@@ -1736,7 +1736,7 @@ export class ExportComponent implements OnInit {
       doc.addPage();
       pageSize = 40;
       generateHeader(
-        '#091c6b',
+        '#0b1538',
         this.dataNav,
         1,
         1,
@@ -1873,7 +1873,7 @@ export class ExportComponent implements OnInit {
       );
       window.scroll(0, 0);
       await this.getRisksOverviewImgForZip().then(data => {
-        doc.addImage(data, 'PNG', 10, 75, 560, 560);
+        doc.addImage(data, 'PNG', 10, 75, 560, 560, undefined, 'FAST');
       });
 
       // SECTION 4 - "VALIDATION"
@@ -1891,7 +1891,7 @@ export class ExportComponent implements OnInit {
       );
       window.scroll(0, 0);
       await this.getRisksCartographyImg().then(data => {
-        doc.addImage(data, 'PNG', 10, 75, 560, 560);
+        doc.addImage(data, 'PNG', 10, 75, 560, 560, undefined, 'FAST');
       });
 
       // SECTION 4 - SUBSECTION 2 - "ACTION PLAN"
@@ -1907,7 +1907,7 @@ export class ExportComponent implements OnInit {
       );
       window.scroll(0, 0);
       await this.getActionPlanOverviewImg().then(data => {
-        doc.addImage(data, 'PNG', 10, 75, 560, 560);
+        doc.addImage(data, 'PNG', 10, 75, 560, 560, undefined, 'FAST');
       });
       // Action plan
 
