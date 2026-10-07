@@ -13,9 +13,10 @@
       } @if (msgFromBack) {
       <p class="msg">
         {{
-          msgFromBack != "incompatibility"
+          (msgFromBack != "incompatibility"
             ? "authentication.errors.sign_in." + msgFromBack
-            : ("authentication.errors." + msgFromBack | translate)
+            : "authentication.errors." + msgFromBack
+          ) | translate
         }}
       </p>
       }
