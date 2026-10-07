@@ -17,6 +17,8 @@ import { User } from 'src/app/models/user.model';
 })
 export class UuidComponent implements OnInit {
   @Input() reset = false;
+  // AgentRH : code transmis par le lien de l'email
+  @Input() prefill = '';
   @Output() canceled = new EventEmitter<boolean>();
   @Output() validated = new EventEmitter<boolean | User>();
 
@@ -45,7 +47,11 @@ export class UuidComponent implements OnInit {
     return this.uuidActivation.controls;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.prefill) {
+      this.uuidActivation.controls.uuid.setValue(this.prefill);
+    }
+  }
 
   onCanceled() {
     this.canceled.emit(true);

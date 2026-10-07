@@ -6,7 +6,7 @@ import {
   UntypedFormGroup,
   Validators
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguagesService } from 'src/app/services/languages.service';
 import { CustomValidators } from 'src/app/shared/validators/custom-validators';
@@ -26,9 +26,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   fromValidation: boolean = false;
   stepForm = 'logIn';
   public accountData = null;
+  // AgentRH : code reçu par email et transmis par le lien (activation=… ou reset=…)
+  prefilledUuid = '';
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private formBuilder: UntypedFormBuilder,
     private renderer: Renderer2,
     public translateService: TranslateService,
@@ -46,6 +49,19 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     this.renderer.addClass(document.body, 'pia-authentication');
+
+    // AgentRH : lien direct depuis les emails. On ouvre le bon formulaire et on
+    // pré-remplit le code, l'utilisateur n'a plus qu'à valider.
+    const linkParams = this.route.snapshot.queryParamMap;
+    const activationCode = (linkParams.get('activation') || '').trim();
+    const resetCode = (linkParams.get('reset') || '').trim();
+    if (activationCode) {
+      this.stepForm = 'checkUuid';
+      this.prefilledUuid = activationCode;
+    } else if (resetCode) {
+      this.stepForm = 'resetPassword';
+      this.prefilledUuid = resetCode;
+    }
 
     // Prepare login form
     this.logIn = this.formBuilder.group({

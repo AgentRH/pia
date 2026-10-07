@@ -35,6 +35,7 @@
             <!-- New account - Activation code -->
             @case ('checkUuid') {
             <app-uuid
+              [prefill]="prefilledUuid"
               (canceled)="changeDisplay('logIn')"
               (validated)="changeDisplay('signUp'); accountData = $event"
             ></app-uuid>
@@ -58,6 +59,7 @@
             @case ('resetPassword') {
             <app-uuid
               [reset]="true"
+              [prefill]="prefilledUuid"
               (canceled)="changeDisplay('forgetPassword')"
               (validated)="changeDisplay('newPassword'); accountData = $event"
             ></app-uuid>
