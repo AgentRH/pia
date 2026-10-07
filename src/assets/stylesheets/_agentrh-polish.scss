@@ -1,0 +1,107 @@
+// -----------------------------------------------------------------------------
+// AgentRH · finitions de l'interface
+// Même mise en page, mêmes couleurs, même logique : seuls changent les coins,
+// les ombres, les filets et quelques transitions. Ce fichier ne contient que du
+// CSS simple. Les « !important » servent à passer devant les styles propres aux
+// composants de l'outil d'origine, qu'on ne modifie pas.
+//
+// Hiérarchie des arrondis : 4px pour les étiquettes et petits contrôles, 6px
+// pour les boutons rectangulaires et les encarts, 8px pour les blocs de contenu,
+// 12px pour les fenêtres posées au-dessus de la page.
+// -----------------------------------------------------------------------------
+
+// Blocs de contenu : coins adoucis, ombre légère teintée bleu nuit à la place
+// de l'ombre grise d'origine.
+.pia-questionBlock,
+.pia-entryContentBlock-header,
+.pia-evaluationBlock-shadowed,
+.pia-fullPreviewBlock-header,
+.pia-previewRisksCartographyBlock,
+.pia-previewRisksOverviewBlock,
+.pia-actionPlanGraphBlock {
+  border-radius: 8px !important;
+  box-shadow: 0 1px 2px rgba(11, 21, 56, 0.05),
+    0 6px 20px rgba(11, 21, 56, 0.06) !important;
+}
+
+// Ces blocs ont un pavé de couleur ou un filet collé au bord : on le découpe
+// pour qu'il suive l'arrondi.
+.pia-entryContentBlock-header,
+.pia-fullPreviewBlock-header,
+.pia-evaluationBlock-shadowed {
+  overflow: hidden;
+}
+
+// Encarts secondaires : arrondi plus discret, ombre plus courte.
+.pia-attachmentsBlock,
+.pia-fullPreviewBlock-headline,
+.actionplanbox,
+.databox,
+.pia-exportBlock-individual {
+  border-radius: 6px !important;
+  box-shadow: 0 1px 2px rgba(11, 21, 56, 0.06),
+    0 2px 8px rgba(11, 21, 56, 0.05) !important;
+}
+.pia-fullPreviewBlock-headline {
+  overflow: hidden;
+}
+
+// Cartes de la liste des analyses
+.pia-cardsBlock {
+  border-radius: 10px;
+  border-color: #e1e6f2;
+  box-shadow: 0 1px 2px rgba(11, 21, 56, 0.04);
+}
+.pia-cardsBlock-item {
+  border-radius: 9px;
+}
+.pia-newBlock-item {
+  border-radius: 6px !important;
+  border-color: #d5dbeb !important;
+}
+
+// Étiquettes (impacts, menaces, sources, personnes)
+.ng2-tag-input.foundation-theme tag {
+  border-radius: 4px !important;
+  overflow: hidden;
+}
+
+// Boutons rectangulaires de l'outil d'origine
+a.btn.btn-active,
+.pia-exportBlock button {
+  border-radius: 6px !important;
+}
+
+// Bloc de connexion et fenêtres posées au-dessus de la page
+.pia-authenticationBlock-auth {
+  border-radius: 12px !important;
+  box-shadow: 0 18px 48px rgba(11, 21, 56, 0.22) !important;
+}
+.pia-modalBlock-content {
+  border-radius: 12px !important;
+  box-shadow: 0 18px 48px rgba(11, 21, 56, 0.22) !important;
+}
+
+// Réponse visuelle aux actions de l'utilisateur, sans animation décorative
+.btn,
+.pia-navigationBlock a {
+  transition: background-color 0.12s ease, border-color 0.12s ease,
+    color 0.12s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .pia-navigationBlock a {
+    transition: none;
+  }
+}
+
+// Recherche et choix de la base de connaissances
+.pia-knowledgeBaseBlock input,
+.pia-knowledgeBaseBlock select {
+  border-radius: 6px !important;
+}
+
+// Étiquettes en lecture seule (analyse soumise ou validée)
+.pia-listBlock .pia-listItem {
+  border-radius: 4px !important;
+}

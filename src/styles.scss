@@ -271,3 +271,5 @@ tag-input-form {
 
 // AgentRH : surcouche de charte, chargée en dernier pour primer sur le reste.
 @include meta.load-css("./assets/stylesheets/agentrh");
+// AgentRH : finitions (coins, ombres, filets), sans changement de mise en page.
+@include meta.load-css("./assets/stylesheets/agentrh-polish");
